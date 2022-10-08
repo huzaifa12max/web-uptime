@@ -5,7 +5,7 @@ const ejs = require("ejs");
 const fs = require("fs");
 const axios = require('axios');
 const url = "https://LankyHumongousCalculators.huzaifasiddiqu1.repl.co";
-const fetchInterval = 6000;
+const fetchInterval = 12000;
 
 app.use(express.static("./public/static"))
 app.set('view engine', 'ejs')
