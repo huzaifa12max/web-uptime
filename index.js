@@ -4,8 +4,8 @@ const app = express();
 const ejs = require("ejs");
 const fs = require("fs");
 const axios = require('axios');
-//const url = "https://LankyHumongousCalculators.huzaifasiddiqu1.repl.co";
-const url = "https://LankyHumongousCalculators.huzaifasiddiqu1.repl.cotger";
+const url = "https://LankyHumongousCalculators.huzaifasiddiqu1.repl.co";
+//const url = "https://LankyHumongousCalculators.huzaifasiddiqu1.repl.cotger";
 const fetchInterval = 12000;
 
 app.use(express.static("./public/static"))
@@ -52,7 +52,7 @@ setInterval(() => {
             }
         })
         .catch(function (err) {
-            console.log("Error: " + eer);
+            console.log("Error: 403");
         })
 }, fetchInterval)
 
