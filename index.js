@@ -16,7 +16,13 @@ console.log(`${url} will be fetched every ${fetchInterval}ms`)
 
 let eer;
 
-setInterval(() => {
+const urls = [
+    "https://LankyHumongousCalculators.huzaifasiddiqu1.repl.co",
+    "https://web-uptime.herokuapp.com"
+]
+
+
+/*setInterval(() => {
     console.log(`Fetched ${url}!`)
     axios.get(url)
         .then((response) => {
@@ -54,7 +60,50 @@ setInterval(() => {
         .catch(function (err) {
             console.log("Error: 403");
         })
+}, fetchInterval) */
+
+for(let i = 0; i < urls.length; i++) {
+    
+setInterval(() => {
+    console.log(`Fetched ${urls[i]}!`)
+    axios.get(urls[i])
+        .then((response) => {
+            switch (response.status) {
+                case 200:
+                    eer = 200;
+                    console.log("Status code: " + eer.toString())
+                    break;
+                case 301:
+                    console.log("Status code: 301")
+                    break;
+                case 302:
+                    console.log("Status code: 302")
+                    break;
+                case 404:
+                    console.log("Status code: 404")
+                    break;
+                case 403:
+                    console.log("Status code:  403")
+                    break;
+                case 410:
+                    console.log("Status code: 410")
+                    break;
+                case 429:
+                    eer = 429;
+                    console.log("Status code: " + eer.toString())
+                    break;
+                case 500:
+                    console.log("Status code: 500")
+                    break;
+                case 503:
+                    console.log("Status code: 503")
+            }
+        })
+        .catch(function (err) {
+            console.log("Error: 403");
+        })
 }, fetchInterval)
+}
 
 app.get("/", (req,res) => {
     res.render("index.ejs", { status: eer, url: url });
