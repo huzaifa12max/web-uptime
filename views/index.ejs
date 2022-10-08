@@ -8,7 +8,15 @@
     <br>
     <center>
         <a href="<%= url %>"><%= url %></a>
-        <p><%= status %></p>
+        <% if(status == 200) { %>
+            <p>Online!</p>
+        <% } else if (status == 429) { %>
+            <p>Down: on a cool down!</p>
+        <% } else if (status == 404) { %>
+            <p>Down!</p>
+        <% } else if (status == 403) { %>
+            <p>Down: Invalid link!</p>
+        <% } %>
     </center>
 </body>
 </html>
