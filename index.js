@@ -72,7 +72,6 @@ setInterval(() => {
                 case 200:
                     eer = 200;
                     console.log("Status code: " + eer.toString())
-                    fs.writeFile("statuses.txt", "200")
                     break;
                 case 301:
                     console.log("Status code: 301")
@@ -81,6 +80,7 @@ setInterval(() => {
                     console.log("Status code: 302")
                     break;
                 case 404:
+                    eer = 404;
                     console.log("Status code: 404")
                     break;
                 case 403:
@@ -101,6 +101,7 @@ setInterval(() => {
             }
         })
         .catch(function (err) {
+            eer = 403;
             console.log("Error: 403");
         })
 }, fetchInterval)
