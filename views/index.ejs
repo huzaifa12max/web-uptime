@@ -8,15 +8,16 @@
     <br>
     <center>
 
-        <% axios.get(urls[i])
-        .then((response) => { stats = response.status })
-        .catch(function (err) {
-            stats = "403";
-        }) %>
-        
-        <% console.log(stats) %>
         
         <% for(let i = 0; i < urls.length; i++) { %>
+            <% axios.get(urls[i])
+            .then((response) => { stats = response.status })
+            .catch(function (err) {
+                stats = "403";
+            }) %>
+            
+            <% console.log(stats) %>
+
             <a href="<%= urls[i] %>"><%= urls[i] %></a>
             <% if(status == 200) { %>
                 <p>Online!</p>
