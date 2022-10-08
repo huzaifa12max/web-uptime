@@ -7,6 +7,14 @@
     <center><h1>Website Uptime</h1></center>
     <br>
     <center>
+
+        <% axios.get(urls[i])
+        .then((response) => { stats = response.status })
+        .catch(function (err) {
+            stats = "403";
+        }) %>
+        
+        <% console.log(stats) %>
         
         <% for(let i = 0; i < urls.length; i++) { %>
             <a href="<%= urls[i] %>"><%= urls[i] %></a>

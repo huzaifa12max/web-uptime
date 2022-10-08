@@ -71,7 +71,7 @@ setInterval(() => {
             switch (response.status) {
                 case 200:
                     eer = 200;
-                    console.log("Status code: " + eer.toString())
+                    console.log("Status code: 200")
                     break;
                 case 301:
                     console.log("Status code: 301")
@@ -91,7 +91,7 @@ setInterval(() => {
                     break;
                 case 429:
                     eer = 429;
-                    console.log("Status code: " + eer.toString())
+                    console.log("Status code: 429")
                     break;
                 case 500:
                     console.log("Status code: 500")
@@ -108,7 +108,7 @@ setInterval(() => {
 }
 
 app.get("/", (req,res) => {
-    res.render("index.ejs", { status: eer, urls: urls });
+    res.render("index.ejs", { status: eer, urls: urls, axios: axios });
 })
 
 console.log(eer)
