@@ -10,10 +10,6 @@ const fetchInterval = 12000;
 app.use(express.static("./public/static"))
 app.set('view engine', 'ejs')
 
-app.get("/", (req,res) => {
-    res.render("index.ejs")
-})
-
 console.log("Service started")
 console.log(`${url} will be fetched every ${fetchInterval}ms`)
 
@@ -54,6 +50,10 @@ setInterval(() => {
             console.log(err.response.status);
         })
 }, fetchInterval)
+
+app.get("/", (req,res) => {
+    res.render("index.ejs")
+})
 
 app.listen(process.env.PORT, function(e) {
     if (e) {
