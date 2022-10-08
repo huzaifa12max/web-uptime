@@ -1,18 +1,18 @@
 const http = require("http");
-const port = 8080;
+const express = require("express");
+const app = express();
+const ejs = require("ejs");
 const fs = require("fs");
 const axios = require('axios');
 const url = "https://LankyHumongousCalculators.huzaifasiddiqu1.repl.co";
-//const url = "https://LankyHumongousCalculators.huzaifasiddiqu1.repl.ceeo";
-
-
 const fetchInterval = 6000;
 
-const server = http.createServer(function (req, res) {
+app.use(express.static("./public/static"))
+app.set('view engine', 'ejs')
+
+app.get("/", (req,res) => {
+    res.render("index.ejs")
 })
-
-
-
 
 console.log("Service started")
 console.log(`${url} will be fetched every ${fetchInterval}ms`)
@@ -49,10 +49,10 @@ setInterval(() => {
         })
 }, fetchInterval)
 
-server.listen(port, function(e) {
+app.listen("8080" || process.env.PORT, function(e) {
     if (e) {
         console.log("There was an Error.");
     } else {
-        console.log("Listening to port: " + port);
+        console.log("Listening to port: " + ("8080" || process.env.PORT));
     }
 }) 
