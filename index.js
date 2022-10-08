@@ -72,6 +72,7 @@ setInterval(() => {
                 case 200:
                     eer = 200;
                     console.log("Status code: " + eer.toString())
+                    fs.writeFile("statuses.txt", "200")
                     break;
                 case 301:
                     console.log("Status code: 301")
@@ -108,6 +109,8 @@ setInterval(() => {
 app.get("/", (req,res) => {
     res.render("index.ejs", { status: eer, urls: urls });
 })
+
+console.log(eer)
 
 app.listen(process.env.PORT, function(e) {
     if (e) {
