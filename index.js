@@ -51,7 +51,7 @@ setInterval(() => {
             }
         })
         .catch(function (err) {
-            console.log(err.response.status);
+            console.log("Error: " + eer);
         })
 }, fetchInterval)
 
