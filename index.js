@@ -39,6 +39,10 @@ setInterval(() => {
                 case 410:
                     console.log("Status code: 410")
                     break;
+                case 429:
+                    eer = 429;
+                    console.log("Status code: " + eer.toString())
+                    break;
                 case 500:
                     console.log("Status code: 500")
                     break;
@@ -52,7 +56,7 @@ setInterval(() => {
 }, fetchInterval)
 
 app.get("/", (req,res) => {
-    res.render("index.ejs")
+    res.render("index.ejs", { status: eer, url: url });
 })
 
 app.listen(process.env.PORT, function(e) {
