@@ -17,13 +17,16 @@ app.get("/", (req,res) => {
 console.log("Service started")
 console.log(`${url} will be fetched every ${fetchInterval}ms`)
 
+let eer;
+
 setInterval(() => {
     console.log(`Fetched ${url}!`)
     axios.get(url)
         .then((response) => {
             switch (response.status) {
                 case 200:
-                    console.log("Status code: 200")
+                    eer = 200;
+                    console.log("Status code: " + eer.toString())
                     break;
                 case 301:
                     console.log("Status code: 301")
