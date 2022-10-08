@@ -34,6 +34,9 @@ setInterval(() => {
                 case 404:
                     console.log("Status code: 404")
                     break;
+                case 403:
+                    console.log("Status code:  403")
+                    break;
                 case 410:
                     console.log("Status code: 410")
                     break;
