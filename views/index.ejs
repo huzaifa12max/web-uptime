@@ -7,17 +7,19 @@
     <center><h1>Website Uptime</h1></center>
     <br>
     <center>
-        <a href="<%= url %>"><%= url %></a>
-        <% if(status == 200) { %>
-            <p>Online!</p>
-        <% } else if (status == 429) { %>
-            <p>Down: on a cool down!</p>
-        <% } else if (status == 404) { %>
-            <p>Down!</p>
-        <% } else if (status == 403) { %>
-            <p>Down: Invalid link!</p>
-        <% } else  { %>
-            <p>Loading...</p>
+        <% for(let i = 0; i < urls.length; i++) { %>
+            <a href="<%= urls[i] %>"><%= urls[i] %></a>
+            <% if(status[i] == 200) { %>
+                <p>Online!</p>
+            <% } else if (status[i] == 429) { %>
+                <p>Down: on a cool down!</p>
+            <% } else if (status[i] == 404) { %>
+                <p>Down!</p>
+            <% } else if (status[i] == 403) { %>
+                <p>Down: Invalid link!</p>
+            <% } else  { %>
+                <p>Loading...</p>
+            <% } %>
         <% } %>
     </center>
 </body>
