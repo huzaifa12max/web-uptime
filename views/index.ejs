@@ -7,30 +7,8 @@
     <center><h1>Website Uptime</h1></center>
     <br>
     <center>
+        
         <% for(let i = 0; i < urls.length; i++) { %>
-
-        <% let status; %>
-        <% axios.get(urls[i])
-        .then((response) => {
-            switch (response.status) {
-                case 200:
-                    status = 200;
-                    break;
-                case 404:
-                    status = 404;
-                    break;
-                case 403:
-                    status = 403;
-                    break;
-                case 429:
-                    eer = 429;
-                    break;
-            }
-        })
-        .catch(function (err) {
-            console.log("Error: 403");
-        }) %>
-
             <a href="<%= urls[i] %>"><%= urls[i] %></a>
             <% if(status[i] == 200) { %>
                 <p>Online!</p>

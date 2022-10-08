@@ -106,7 +106,7 @@ setInterval(() => {
 }
 
 app.get("/", (req,res) => {
-    res.render("index.ejs", { urls: urls, axios: axios });
+    res.render("index.ejs", { status: eer, urls: urls });
 })
 
 app.listen(process.env.PORT, function(e) {
