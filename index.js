@@ -52,10 +52,10 @@ setInterval(() => {
         })
 }, fetchInterval)
 
-app.listen("8080" || process.env.PORT, function(e) {
+app.listen(process.env.PORT, function(e) {
     if (e) {
         console.log("There was an Error.");
     } else {
-        console.log("Listening to port: " + ("8080" || process.env.PORT));
+        console.log("Listening to port: " + (process.env.PORT));
     }
 }) 
