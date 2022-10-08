@@ -10,6 +10,8 @@
 
         
         <% for(let i = 0; i < urls.length; i++) { %>
+            <% let stats; %>
+
             <% axios.get(urls[i])
             .then((response) => { stats = response.status })
             .catch(function (err) {
