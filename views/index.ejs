@@ -10,13 +10,13 @@
         
         <% for(let i = 0; i < urls.length; i++) { %>
             <a href="<%= urls[i] %>"><%= urls[i] %></a>
-            <% if(status[i] == 200) { %>
+            <% if(status == 200) { %>
                 <p>Online!</p>
-            <% } else if (status[i] == 429) { %>
+            <% } else if (status == 429) { %>
                 <p>Down: on a cool down!</p>
-            <% } else if (status[i] == 404) { %>
+            <% } else if (status == 404) { %>
                 <p>Down!</p>
-            <% } else if (status[i] == 403) { %>
+            <% } else if (status == 403) { %>
                 <p>Down: Invalid link!</p>
             <% } else  { %>
                 <p>Loading...</p>
