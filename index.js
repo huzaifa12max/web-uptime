@@ -18,7 +18,8 @@ let eer;
 
 const urls = [
     "https://LankyHumongousCalculators.huzaifasiddiqu1.repl.co",
-    "https://web-uptime.herokuapp.com"
+    "https://web-uptime.herokuapp.com",
+    "https://wever-verification.herokuapp.com"
 ]
 
 
