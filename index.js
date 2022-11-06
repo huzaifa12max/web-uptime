@@ -65,13 +65,11 @@ const urls = [
 for(let i = 0; i < urls.length; i++) {
     
 setInterval(() => {
-    console.log(`Fetched ${urls[i]}!`)
     axios.get(urls[i])
         .then((response) => {
             switch (response.status) {
                 case 200:
                     eer = 200;
-                    console.log("Status code: 200")
                     break;
                 case 301:
                     console.log("Status code: 301")
