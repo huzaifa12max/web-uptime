@@ -17,8 +17,8 @@ console.log(`${url} will be fetched every ${fetchInterval}ms`)
 let eer;
 
 const urls = [
-    "https://LankyHumongousCalculators.huzaifasiddiqu1.repl.co",
-    "https://wever-verification.herokuapp.com"
+    "https://wever-verification.herokuapp.com",
+    "https://uptime-bot-huza.herokuapp.com"
 ]
 
 
