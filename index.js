@@ -18,7 +18,8 @@ let eer;
 
 const urls = [
     "https://wever-verification.herokuapp.com",
-    "https://uptime-bot-huza.herokuapp.com"
+    "https://uptime-bot-huza.herokuapp.com",
+    "https://www.gorillatagcomp.com"
 ]
 
 
